@@ -47,5 +47,27 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     }
 
     assert_redirected_to car_path(Car.last)
+
   end
+
+  test "create car fail with empty fields" do
+    post cars_path, params: {
+      car: {
+        registration: "FFCF53",
+        brand: "",
+        version: "Rio",
+        model: "Rio 3 1.4 Mec",
+        year: "2013",
+        color: "Plateado plata",
+        price: "7500000",
+        credit_price: "0",
+        transmission: "Mec",
+        traction: "4X2",
+        fuel: "Gasolina"
+      }
+    }
+
+    assert_response :unprocessable_entity
+  end
+
 end
