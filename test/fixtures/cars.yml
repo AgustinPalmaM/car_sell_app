@@ -1,27 +1,29 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  registration: MyString
-  brand: MyString
-  version: MyString
-  model: MyString
-  year: 1
-  color: MyString
-  price: 1
-  credit_price: 1
-  transmission: MyString
-  traction: MyString
-  fuel: MyString
+  id: 1
+  registration: FFCF53
+  brand: Kia Motors
+  version: Rio
+  model: Rio 3 1.4 Mec
+  year: 2013
+  color: Plateado plata
+  price: 7500000
+  credit_price: 0
+  transmission: Mec
+  traction: 4X2
+  fuel: Gasolina
 
 two:
-  registration: MyString
-  brand: MyString
-  version: MyString
-  model: MyString
-  year: 1
-  color: MyString
-  price: 1
-  credit_price: 1
-  transmission: MyString
-  traction: MyString
-  fuel: MyString
+  id: 2
+  registration: JLZC12
+  brand: Kia Motors
+  version: Cerato
+  model: Cerato Ex 1.6 Mec
+  year: 2017
+  color: Gris platino
+  price: 7900000
+  credit_price: 0
+  transmission: Mec
+  traction: 4X2
+  fuel: Gasolina
