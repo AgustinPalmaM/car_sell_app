@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get '/cars', to: "cars#index"
+  get '/cars/:id', to: "cars#show", as: :car
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  get "/products", to: "products#index"
-  get "products/:id", to: "products#show", as: :product
+
   # Defines the root path route ("/")
-  root "products#index"
+  root "cars#index"
 end
