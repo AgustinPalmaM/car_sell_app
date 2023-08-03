@@ -21,4 +21,31 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_select ".traction", "4X2"
     assert_select ".fuel", "Gasolina"
   end
+
+  test "render a new car form" do
+    get new_car_path
+    assert_response :success
+    assert_select "form"
+    assert_select "h1", "Create a new car"
+  end
+
+  test "create a new car" do
+    post cars_path, params: {
+      car: {
+        registration: "FFCF53",
+        brand: "Kia Motors",
+        version: "Rio",
+        model: "Rio 3 1.4 Mec",
+        year: "2013",
+        color: "Plateado plata",
+        price: "7500000",
+        credit_price: "0",
+        transmission: "Mec",
+        traction: "4X2",
+        fuel: "Gasolina"
+      }
+    }
+
+    assert_redirected_to car_path(Car.last)
+  end
 end

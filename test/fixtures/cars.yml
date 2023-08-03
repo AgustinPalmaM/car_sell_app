@@ -1,7 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
   registration: FFCF53
   brand: Kia Motors
   version: Rio
@@ -15,7 +14,6 @@ one:
   fuel: Gasolina
 
 two:
-  id: 2
   registration: JLZC12
   brand: Kia Motors
   version: Cerato
