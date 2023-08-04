@@ -10,5 +10,10 @@
   <p class="transmission"><%= @car.transmission %></p>
   <p class="traction"><%= @car.traction %></p>
   <p class="fuel"><%= @car.fuel %></p>
+  <div class="">
+    <% if @car.photo.attached? %>
+      <%= image_tag(@car.photo) %>
+    <% end %>
+  </div>
   <%= link_to  "edit car", edit_car_path(@car) %>
 </div>

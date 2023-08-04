@@ -7,6 +7,6 @@
     <p><%= car.model %></p>
     <p><%= car.price %></p>
     <%= link_to  "show more", car_path(car) %>
-    <%= link_to  "delete", destroy_car_path(car), data: { turbo_method: :delete } %>
+    <%= link_to  "delete", destroy_car_path(car), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete" } %>
   </div>
 <% end %>
