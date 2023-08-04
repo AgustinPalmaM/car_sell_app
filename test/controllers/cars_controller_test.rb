@@ -85,6 +85,16 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "form"
     assert_select "h1", "Edit car"
+  end
 
+  test "update car" do
+    patch car_path(cars(:one)), params: {
+      car: {
+        price: "7600000"
+      }
+    }
+
+    assert_redirected_to car_path(cars(:one))
+    assert_equal flash[:notice], "Edited succesfully"
   end
 end
