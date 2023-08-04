@@ -17,7 +17,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_select ".year", "2013"
     assert_select ".color",  "Plateado plata"
     assert_select ".price",  "7500000"
-    assert_select ".transmission",  "Mec"
+    assert_select ".transmission", "Mec"
     assert_select ".traction", "4X2"
     assert_select ".fuel", "Gasolina"
   end
@@ -47,7 +47,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     }
 
     assert_redirected_to car_path(Car.last)
-
+    assert_equal flash["notice"], "Created successfully"
   end
 
   test "create car fail with empty fields" do
@@ -70,4 +70,13 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
 
+  test "delete car" do
+    assert_difference("Car.count", -1) do
+      delete car_path(cars(:one))
+    end
+    assert_redirected_to cars_path
+    follow_redirect!
+    assert_response :success
+    assert_equal flash[:notice], "Deleted ok"
+  end
 end

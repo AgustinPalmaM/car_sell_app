@@ -9,8 +9,7 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= flash[:notice]%>
-    <%= flash[:alert]%>
+    <%= render  "/shared/flash" %>
     <%= render  "/shared/header" %>
     <%= yield %>
   </body>
