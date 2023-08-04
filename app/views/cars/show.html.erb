@@ -11,9 +11,7 @@
   <p class="traction"><%= @car.traction %></p>
   <p class="fuel"><%= @car.fuel %></p>
   <div class="">
-    <% if @car.photo.attached? %>
-      <%= image_tag(@car.photo) %>
-    <% end %>
+    <%= image_tag(@car.photo, width: 500) if @car.photo.attached?  %>
   </div>
   <%= link_to  "edit car", edit_car_path(@car) %>
 </div>
