@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/cars/:id', to: "cars#show", as: :car
   post '/cars', to: "cars#create", as: :create_car
   delete 'cars/:id', to: "cars#destroy", as: :destroy_car
+  get 'cars/:id/edit', to: "cars#edit", as: :edit_car
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

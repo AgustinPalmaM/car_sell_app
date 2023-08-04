@@ -79,4 +79,12 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_equal flash[:notice], "Deleted ok"
   end
+
+  test "edit car" do
+    get edit_car_path(cars(:one))
+    assert_response :success
+    assert_select "form"
+    assert_select "h1", "Edit car"
+
+  end
 end

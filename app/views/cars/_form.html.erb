@@ -1,0 +1,48 @@
+  <%= form_with model: car do |form| %>
+  <% car.errors.full_messages.each do |error| %>
+    <div><%= error %></div>
+  <% end %>
+  <div>
+    <%= form.label "registration" %>
+    <%= form.text_field :registration %>
+  </div>
+  <div>
+    <%= form.label "brand" %>
+    <%= form.text_field :brand %>
+  </div>
+  <div>
+    <%= form.label "version" %>
+    <%= form.text_field :version %>
+  </div>
+  <div>
+    <%= form.label "model" %>
+    <%= form.text_field :model %>
+  </div>
+  <div>
+    <%= form.label "year" %>
+    <%= form.number_field :year %>
+  </div>
+  <div>
+    <%= form.label "color" %>
+    <%= form.text_field :color %>
+  </div>
+  <div>
+    <%= form.label "price" %>
+    <%= form.number_field :price %>
+  </div>
+  <div>
+    <%= form.label "transmission" %>
+    <%= form.text_field :transmission %>
+  </div>
+  <div>
+    <%= form.label "traction" %>
+    <%= form.text_field :traction %>
+  </div>
+  <div>
+    <%= form.label "fuel" %>
+    <%= form.text_field :fuel %>
+  </div>
+  <div>
+    <%= form.submit  %>
+  </div>
+<% end %>
