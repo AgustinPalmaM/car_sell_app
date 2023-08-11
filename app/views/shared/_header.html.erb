@@ -1,4 +1,4 @@
 <%= link_to  cars_path do %>
-  <h1>CarSell</h1>
+  <h1><%= t('title')%></h1>
 <% end %>
-<%= link_to  "Create a new car", new_car_path %>
+<%= link_to  t('create'), new_car_path %>

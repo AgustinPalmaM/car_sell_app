@@ -31,3 +31,39 @@
 
 en:
   hello: "Hello world"
+
+en:
+  title: 'Cars Sell'
+  create: 'Create new car'
+  activerecord:
+    model:
+      car: Car
+    attributes:
+      car:
+        registration: 'resgistration'
+        brand: 'brand'
+        version: 'version'
+        model: 'model'
+        year: 'year'
+        color: 'color'
+        price: 'price'
+        credit_price: 'credit price'
+        transmission: 'transmission'
+        traction: 'traction'
+        fuel: 'fuel'
+        photo: 'photo'
+  common:
+    confirm: 'Are you sure to delete?'
+  cars:
+    index:
+      title: 'Cars'
+    edit:
+      title: 'Edit car'
+    new:
+      title: 'Create a new car'
+    create:
+      created: 'Created successfully'
+    update:
+      edited: 'Edited succesfully'
+    destroy:
+      deleted: 'Deleted ok'

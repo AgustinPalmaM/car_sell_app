@@ -1,0 +1,63 @@
+es:
+  title: 'Vende Autos'
+  create: 'Crear nuevo auto'
+  activerecord:
+    model:
+      car: Car
+    attributes:
+      car:
+        registration: 'matricula'
+        brand: 'marca'
+        version: 'version'
+        model: 'modelo'
+        year: 'anio'
+        color: 'color'
+        price: 'precio'
+        credit_price: 'precio credito'
+        transmission: 'transmision'
+        traction: 'traccion'
+        fuel: 'combustible'
+        photo: 'foto'
+    errors:
+      models:
+        car:
+          attributes:
+            registration:
+              blank: 'campo no puede estar vacio'
+            brand:
+              blank: 'campo no puede estar vacio'
+            version:
+              blank: 'campo no puede estar vacio'
+            model:
+              blank: 'campo no puede estar vacio'
+            year:
+              blank: 'campo no puede estar vacio'
+            color:
+              blank: 'campo no puede estar vacio'
+            price:
+              blank: 'campo no puede estar vacio'
+            credit_price:
+              blank: 'campo no puede estar vacio' 
+            transmission:
+              blank: 'campo no puede estar vacio' 
+            traction:
+              blank: 'campo no puede estar vacio' 
+            fuel:
+              blank: 'campo no puede estar vacio' 
+  common:
+    confirm: 'Estas seguro de borrarlo?'
+  cars:
+    index:
+      title: 'Autos'
+    show:
+      title: 'Auto'
+    edit:
+      title: 'Editar producto'
+    new:
+      title: 'Crear un nuevo auto'
+    create:
+      created: 'Creado ok'
+    update:
+      edited: 'Editado ok'
+    destroy:
+      deleted: 'Eliminado ok'

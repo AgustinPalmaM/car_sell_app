@@ -14,7 +14,7 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     if @car.save
-      flash[:notice] = "Created successfully"
+      flash[:notice] = t('.created')
       redirect_to car_path(@car)
     else
       render "new", status: :unprocessable_entity
@@ -27,7 +27,7 @@ class CarsController < ApplicationController
   
   def update
     if car.update(car_params)
-      flash[:notice] = "Edited succesfully"
+      flash[:notice] = t('.edited')
       redirect_to car_path(car)
     else
       render "edit", status: :unprocessable_entity
@@ -36,7 +36,7 @@ class CarsController < ApplicationController
 
   def destroy
     return unless car.destroy
-    flash[:notice] = "Deleted ok"
+    flash[:notice] = t('.deleted')
     redirect_to cars_path, status: :found
   end
 
