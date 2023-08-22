@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all.with_attached_photo
+    @cars = Car.all.with_attached_photo.order(created_at: :desc)
   end
 
   def show
