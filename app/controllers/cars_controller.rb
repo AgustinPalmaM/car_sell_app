@@ -11,23 +11,23 @@ class CarsController < ApplicationController
     @car = Car.new
   end
 
+  def edit
+    car
+  end
+
   def create
     @car = Car.new(car_params)
     if @car.save
-      flash[:notice] = t('.created')
+      flash[:notice] = t(".created")
       redirect_to car_path(@car)
     else
       render "new", status: :unprocessable_entity
     end
   end
 
-  def edit
-    car
-  end
-  
   def update
     if car.update(car_params)
-      flash[:notice] = t('.edited')
+      flash[:notice] = t(".edited")
       redirect_to car_path(car)
     else
       render "edit", status: :unprocessable_entity
@@ -36,7 +36,8 @@ class CarsController < ApplicationController
 
   def destroy
     return unless car.destroy
-    flash[:notice] = t('.deleted')
+
+    flash[:notice] = t(".deleted")
     redirect_to cars_path, status: :found
   end
 
@@ -48,6 +49,6 @@ class CarsController < ApplicationController
 
   def car_params
     params.require(:car).permit(:registration, :brand, :version, :model, :year, :color, :price,
-                                :transmission, :traction, :fuel, :photo)
+                                :transmission, :traction, :fuel, :photo, :category_id)
   end
 end

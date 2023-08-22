@@ -12,6 +12,7 @@ one:
   transmission: Mec
   traction: 4X2
   fuel: Gasolina
+  category: automovil
 
 two:
   registration: JLZC12
@@ -25,3 +26,4 @@ two:
   transmission: Mec
   traction: 4X2
   fuel: Gasolina
+  category: automovil

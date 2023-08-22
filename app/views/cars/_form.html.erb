@@ -43,6 +43,10 @@
     <%= form.text_field :fuel %>
   </div>
   <div>
+    <%= form.label "category" %>
+    <%= form.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+  <div>
     <%= form.label "photo" %>
     <%= form.file_field :photo %>
   </div>

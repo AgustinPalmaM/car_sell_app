@@ -1,9 +1,11 @@
 es:
   title: 'Vende Autos'
   create: 'Crear nuevo auto'
+  categories_title: 'categorias'
   activerecord:
-    model:
-      car: Car
+    models:
+      car: 'Auto'
+      category: 'Categoria'
     attributes:
       car:
         registration: 'matricula'
@@ -18,6 +20,9 @@ es:
         traction: 'traccion'
         fuel: 'combustible'
         photo: 'foto'
+        category: 'categoria'
+      category:
+        name: 'Nombre'
     errors:
       models:
         car:
@@ -45,8 +50,13 @@ es:
             fuel:
               blank: 'campo no puede estar vacio' 
   common:
-    confirm: 'Estas seguro de borrarlo?'
+    confirm: 'Estas seguro de eliminarlo?'
+    back: 'volver atras'
+    edit: 'editar'
+    delete: 'eliminar'
   cars:
+    car:
+      show_more: 'ver mas'
     index:
       title: 'Autos'
     show:
@@ -61,3 +71,22 @@ es:
       edited: 'Editado ok'
     destroy:
       deleted: 'Eliminado ok'
+  categories:
+    categories_title: 'categorias'
+    category:
+      edit: 'editar'
+      delete: 'eliminar'
+      name: 'categoria'
+    index:
+      title: 'Categorias'
+      new: 'agregar categoria'
+    edit:
+      title: 'Editar categoria'
+    new:
+      title: 'Nueva categoria'
+    create:
+      created: 'Categoria creada correctamente'
+    update:
+      updated: 'Categoria editada correctamente'
+    destroy:
+      deleted: 'Categoria eliminada correctamente'

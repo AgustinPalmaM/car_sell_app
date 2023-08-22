@@ -13,5 +13,5 @@
   <div class="">
     <%= image_tag(@car.photo, width: 500) if @car.photo.attached?  %>
   </div>
-  <%= link_to  "edit car", edit_car_path(@car) %>
+  <%= link_to t('common.edit'), edit_car_path(@car) %>
 </div>

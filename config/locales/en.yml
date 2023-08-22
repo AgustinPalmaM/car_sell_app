@@ -35,12 +35,15 @@ en:
 en:
   title: 'Cars Sell'
   create: 'Create new car'
+  categories_title: 'categories'
   activerecord:
     model:
       car: Car
     attributes:
+      category:
+        name: 'name'
       car:
-        registration: 'resgistration'
+        registration: 'registration'
         brand: 'brand'
         version: 'version'
         model: 'model'
@@ -54,9 +57,16 @@ en:
         photo: 'photo'
   common:
     confirm: 'Are you sure to delete?'
+    back: 'Go back'
+    edit: 'edit'
+    delete: 'delete'
   cars:
+    car:
+      show_more: 'show more'
     index:
       title: 'Cars'
+    show:
+      title: 'Car'
     edit:
       title: 'Edit car'
     new:
@@ -67,3 +77,21 @@ en:
       edited: 'Edited succesfully'
     destroy:
       deleted: 'Deleted ok'
+  categories:
+    category:
+      edit: 'edit'
+      delete: 'delete'
+      name: 'category'
+    index:
+      title: 'Categories'
+      new: 'add category'
+    edit:
+      title: 'Edit Category'
+    new:
+      title: 'New Category'
+    create:
+      created: 'Category was successfully created.'
+    update:
+      updated: 'Category was updated successfully'
+    destroy:
+      deleted: 'Category was successfully deleted.'

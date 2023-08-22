@@ -42,7 +42,8 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
         credit_price: "0",
         transmission: "Mec",
         traction: "4X2",
-        fuel: "Gasolina"
+        fuel: "Gasolina",
+        category_id: categories(:automovil).id
       }
     }
 
@@ -63,7 +64,8 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
         credit_price: "0",
         transmission: "Mec",
         traction: "4X2",
-        fuel: "Gasolina"
+        fuel: "Gasolina",
+        category_id: categories(:automovil).id
       }
     }
 

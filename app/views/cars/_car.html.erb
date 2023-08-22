@@ -7,6 +7,6 @@
   <div>
     <%= image_tag(car.photo, width: 200) if car.photo.attached? %>
   </div>
-  <%= link_to  "show more", car_path(car) %>
-  <%= link_to  "delete", car_path(car), data: { turbo_method: :delete, turbo_confirm: t('common.confirm') } %>
+  <%= link_to t('.show_more'), car_path(car) %>
+  <%= link_to t('common.delete'), car_path(car), data: { turbo_method: :delete, turbo_confirm: t('common.confirm') } %>
 </div>
