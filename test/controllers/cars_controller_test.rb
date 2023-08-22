@@ -5,6 +5,19 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     get cars_path
     assert_response :success
     assert_select ".car", 2
+    assert_select ".category", 2
+  end
+
+  test "should get index cars with filtered camioneta category" do
+    get cars_path(category_id: categories(:camioneta).id)
+    assert_response :success
+    assert_select ".car", 0
+  end
+
+  test "should get index cars with filtered automovil category" do
+    get cars_path(category_id: categories(:automovil).id)
+    assert_response :success
+    assert_select ".car", 2
   end
 
   test "should get show" do

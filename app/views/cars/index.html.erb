@@ -1,2 +1,6 @@
-<h1><%= t('.title')%></h1>
-<%= render partial: "car", collection: @cars %>
+<%= turbo_frame_tag 'categories' do%>
+  <h1><%= t('.title')%></h1>
+  <%= link_to  t('.all'), cars_path %>
+  <%= render  partial: 'category', collection: @categories %>
+  <%= render partial: "car", collection: @cars %>
+<% end %>

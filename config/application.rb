@@ -22,5 +22,8 @@ module CarSellApp
     config.i18n.available_locales = %i[en es]
     # default language
     config.i18n.default_locale = :en
+
+    # allow multyqueries
+    config.active_record.async_query_executor = :global_thread_pool
   end
 end

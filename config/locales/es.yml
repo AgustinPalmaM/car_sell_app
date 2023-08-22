@@ -59,6 +59,7 @@ es:
       show_more: 'ver mas'
     index:
       title: 'Autos'
+      all: 'Todos los autos'
     show:
       title: 'Auto'
     edit:

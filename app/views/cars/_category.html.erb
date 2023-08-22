@@ -1,0 +1,5 @@
+<div id="<%= dom_id category %>">
+  <%= link_to cars_path(category_id: category.id), class: 'category' do %>
+    <%= category.name %>
+  <% end %>
+</div>

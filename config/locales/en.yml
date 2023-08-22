@@ -65,6 +65,7 @@ en:
       show_more: 'show more'
     index:
       title: 'Cars'
+      all: 'All cars'
     show:
       title: 'Car'
     edit:

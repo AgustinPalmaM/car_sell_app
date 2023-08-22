@@ -1,6 +1,10 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all.with_attached_photo.order(created_at: :desc)
+    @categories = Category.order(name: :asc).load_async
+    @cars = Car.with_attached_photo.order(created_at: :desc).load_async
+    if params[:category_id]
+      @cars = Car.where(category_id: params[:category_id])
+    end
   end
 
   def show
