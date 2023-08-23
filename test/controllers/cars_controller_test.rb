@@ -27,6 +27,20 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_select "p", "Rio 3 1.4 Mec"
   end
 
+  test "sort cars by expensive first" do
+    get cars_path(order_by: 'expensive')
+    assert_response :success
+    assert_select ".car", 2
+    assert_select ".cars .car:first-child p", "Cerato Ex 1.6 Mec" 
+  end
+
+  test "sort cars by cheapest first" do
+    get cars_path(order_by: 'cheapest')
+    assert_response :success
+    assert_select ".car", 2
+    assert_select ".cars .car:first-child p", "Rio 3 1.4 Mec" 
+  end
+
   test "should get show" do
     get car_path(cars(:one))
     assert_response :success

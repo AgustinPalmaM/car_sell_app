@@ -21,7 +21,7 @@
 class Car < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :whose_name_starts_with,
-                  against: [:brand, :model, :version],
+                  against: %i[brand model version],
                   using: {
                     tsearch: { prefix: true }
                   }
@@ -32,4 +32,10 @@ class Car < ApplicationRecord
 
   validates :registration, :brand, :version, :model, :color, :year, :price, :transmission,
             :traction, :fuel, presence: true
+
+  ORDER_BY = {
+    newest: "created_at DESC",
+    cheapest: "price ASC",
+    expensive: "price DESC"
+  }.freeze
 end

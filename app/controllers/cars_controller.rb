@@ -1,10 +1,11 @@
 class CarsController < ApplicationController
   def index
     @categories = Category.order(name: :asc).load_async
-    @cars = Car.with_attached_photo.order(created_at: :desc).load_async
+    @cars = Car.with_attached_photo
     @cars = Car.where(category_id: params[:category_id]) if params[:category_id]
 
     filter
+
   end
 
   def show
@@ -84,5 +85,11 @@ class CarsController < ApplicationController
     elsif params[:query_text].present?
       @cars = Car.whose_name_starts_with(params[:query_text])
     end
+
+    order_by = Car::ORDER_BY.fetch(params[:order_by]&.to_sym, Car::ORDER_BY[:newest])
+
+    @cars = @cars.order(order_by).load_async
+
+    
   end
 end

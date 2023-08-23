@@ -4,8 +4,11 @@
     <%= form.text_field :query_text , placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
     <%= form.number_field :min_price, placeholder: t('.min'), onChange: 'this.form.requestSubmit()', value: params[:min_price] %>
     <%= form.number_field :max_price, placeholder: t('.max'), onChange: 'this.form.requestSubmit()', value: params[:max_price] %>
+    <%= form.select :order_by,  options_for_select(Car::ORDER_BY.keys.map { |key| [t(".#{key}"), key]}, params[:order_by]), {}, { onChange: 'this.form.requestSubmit()'} %>
   <% end %>
   <%= link_to  t('.all'), cars_path %>
   <%= render  partial: 'category', collection: @categories %>
-  <%= render partial: "car", collection: @cars %>
+  <div class="cars">
+    <%= render partial: "car", collection: @cars %>
+  </div>
 <% end %>

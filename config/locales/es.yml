@@ -63,6 +63,9 @@ es:
       min: 'precio minimo'
       max: 'precio maximo'
       query_text: 'texto buscado'
+      newest: "Mas recientes primero"
+      cheapest: "Mas baratos primero"
+      expensive: "Mas caros primero"
     show:
       title: 'Auto'
     edit:
