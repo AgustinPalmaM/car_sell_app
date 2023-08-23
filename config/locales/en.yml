@@ -66,6 +66,8 @@ en:
     index:
       title: 'Cars'
       all: 'All cars'
+      min: 'min price'
+      max: 'max price'
     show:
       title: 'Car'
     edit:

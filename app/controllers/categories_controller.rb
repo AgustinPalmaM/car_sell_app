@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[show edit update destroy]
+  before_action :set_category, only: %i[edit update destroy]
 
   # GET /categories or /categories.json
   def index
@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to categories_path, notice: t('.created') }
+        format.html { redirect_to categories_path, notice: t(".created") }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to categories_path, notice: t('.updated') }
+        format.html { redirect_to categories_path, notice: t(".updated") }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -43,7 +43,7 @@ class CategoriesController < ApplicationController
     @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to categories_path, notice: t('.deleted')}
+      format.html { redirect_to categories_path, notice: t(".deleted") }
     end
   end
 

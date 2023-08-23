@@ -20,6 +20,13 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_select ".car", 2
   end
 
+  test "render a list of cars filtered by min price and max price" do
+    get cars_path(min_price: 7_000_000, max_price: 10_000_000)
+    assert_response :success
+    assert_select ".car", 1
+    assert_select "p", "Rio 3 1.4 Mec"
+  end
+
   test "should get show" do
     get car_path(cars(:one))
     assert_response :success
@@ -29,7 +36,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_select ".model", "Rio 3 1.4 Mec"
     assert_select ".year", "2013"
     assert_select ".color",  "Plateado plata"
-    assert_select ".price",  "7500000"
+    assert_select ".price",  "7490000"
     assert_select ".transmission", "Mec"
     assert_select ".traction", "4X2"
     assert_select ".fuel", "Gasolina"

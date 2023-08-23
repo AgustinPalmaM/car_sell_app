@@ -1,5 +1,9 @@
 <%= turbo_frame_tag 'categories' do%>
   <h1><%= t('.title')%></h1>
+  <%= form_with url: cars_path, method: :get do |form|%>
+    <%= form.number_field :min_price, placeholder: t('.min'), onChange: 'this.form.requestSubmit()', value: params[:min_price] %>
+    <%= form.number_field :max_price, placeholder: t('.max'), onChange: 'this.form.requestSubmit()', value: params[:max_price] %>
+  <% end %>
   <%= link_to  t('.all'), cars_path %>
   <%= render  partial: 'category', collection: @categories %>
   <%= render partial: "car", collection: @cars %>

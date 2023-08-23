@@ -60,6 +60,8 @@ es:
     index:
       title: 'Autos'
       all: 'Todos los autos'
+      min: 'precio minimo'
+      max: 'precio maximo'
     show:
       title: 'Auto'
     edit:

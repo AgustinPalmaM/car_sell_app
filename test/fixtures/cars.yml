@@ -7,7 +7,7 @@ one:
   model: Rio 3 1.4 Mec
   year: 2013
   color: Plateado plata
-  price: 7500000
+  price: 7490000
   credit_price: 0
   transmission: Mec
   traction: 4X2
@@ -21,7 +21,7 @@ two:
   model: Cerato Ex 1.6 Mec
   year: 2017
   color: Gris platino
-  price: 7900000
+  price: 10990000
   credit_price: 0
   transmission: Mec
   traction: 4X2

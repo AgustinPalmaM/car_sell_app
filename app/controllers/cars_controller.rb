@@ -2,9 +2,9 @@ class CarsController < ApplicationController
   def index
     @categories = Category.order(name: :asc).load_async
     @cars = Car.with_attached_photo.order(created_at: :desc).load_async
-    if params[:category_id]
-      @cars = Car.where(category_id: params[:category_id])
-    end
+    @cars = Car.where(category_id: params[:category_id]) if params[:category_id]
+
+    filter
   end
 
   def show
@@ -54,5 +54,21 @@ class CarsController < ApplicationController
   def car_params
     params.require(:car).permit(:registration, :brand, :version, :model, :year, :color, :price,
                                 :transmission, :traction, :fuel, :photo, :category_id)
+  end
+
+  def range_price
+    min = params[:min_price]
+    max = params[:max_price]
+    min..max
+  end
+
+  def filter
+    if params[:min_price].present? && params[:max_price].present?
+      @cars = Car.where(price: range_price)
+    elsif params[:min_price].present?
+      @cars = Car.where("price >= ?", params[:min_price])
+    elsif params[:max_price].present?
+      @cars = Car.where("price <= ?", params[:max_price])
+    end
   end
 end
