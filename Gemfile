@@ -11,6 +11,7 @@ gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
+gem "pg_search", "~> 2.3"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -55,6 +56,7 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "annotate", "~> 3.2"
   gem "faker", "~> 3.2"
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
@@ -73,3 +75,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+

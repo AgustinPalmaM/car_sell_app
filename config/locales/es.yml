@@ -62,6 +62,7 @@ es:
       all: 'Todos los autos'
       min: 'precio minimo'
       max: 'precio maximo'
+      query_text: 'texto buscado'
     show:
       title: 'Auto'
     edit:

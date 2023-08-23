@@ -64,11 +64,25 @@ class CarsController < ApplicationController
 
   def filter
     if params[:min_price].present? && params[:max_price].present?
-      @cars = Car.where(price: range_price)
+      @cars = params[:query_text].present? ? Car.where(price: range_price).whose_name_starts_with(params[:query_text]) : Car.where(price: range_price)
     elsif params[:min_price].present?
-      @cars = Car.where("price >= ?", params[:min_price])
+      @cars = if params[:query_text].present?
+                Car.where("price >= ?",
+                          params[:min_price]).whose_name_starts_with(params[:query_text])
+              else
+                Car.where("price >= ?",
+                          params[:min_price])
+              end
     elsif params[:max_price].present?
-      @cars = Car.where("price <= ?", params[:max_price])
+      @cars = if params[:query_text].present?
+                Car.where("price <= ?",
+                          params[:max_price]).whose_name_starts_with(params[:query_text])
+              else
+                Car.where("price <= ?",
+                          params[:max_price])
+              end
+    elsif params[:query_text].present?
+      @cars = Car.whose_name_starts_with(params[:query_text])
     end
   end
 end

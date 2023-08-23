@@ -68,6 +68,7 @@ en:
       all: 'All cars'
       min: 'min price'
       max: 'max price'
+      query_text: 'search text'
     show:
       title: 'Car'
     edit:
