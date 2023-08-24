@@ -4,8 +4,8 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get cars_path
     assert_response :success
-    assert_select ".car", 2
-    assert_select ".category", 2
+    assert_select ".car", 4
+    assert_select ".category", 4
   end
 
   test "should get index cars with filtered camioneta category" do
@@ -17,28 +17,28 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   test "should get index cars with filtered automovil category" do
     get cars_path(category_id: categories(:automovil).id)
     assert_response :success
-    assert_select ".car", 2
+    assert_select ".car", 4
   end
 
   test "render a list of cars filtered by min price and max price" do
     get cars_path(min_price: 7_000_000, max_price: 10_000_000)
     assert_response :success
-    assert_select ".car", 1
+    assert_select ".car", 2
     assert_select "p", "Rio 3 1.4 Mec"
   end
 
   test "sort cars by expensive first" do
-    get cars_path(order_by: 'expensive')
+    get cars_path(order_by: "expensive")
     assert_response :success
-    assert_select ".car", 2
-    assert_select ".cars .car:first-child p", "Cerato Ex 1.6 Mec" 
+    assert_select ".car", 4
+    assert_select ".cars .car:first-child p", "V40 R-Design"
   end
 
   test "sort cars by cheapest first" do
-    get cars_path(order_by: 'cheapest')
+    get cars_path(order_by: "cheapest")
     assert_response :success
-    assert_select ".car", 2
-    assert_select ".cars .car:first-child p", "Rio 3 1.4 Mec" 
+    assert_select ".car", 4
+    assert_select ".cars .car:first-child p", "Morning ls 1.0"
   end
 
   test "should get show" do

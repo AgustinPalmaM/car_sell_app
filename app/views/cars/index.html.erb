@@ -1,4 +1,4 @@
-<%= turbo_frame_tag 'categories' do%>
+<%= turbo_frame_tag 'home' do %>
   <h1><%= t('.title')%></h1>
   <%= form_with url: cars_path, method: :get do |form|%>
     <%= form.text_field :query_text , placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
@@ -8,7 +8,10 @@
   <% end %>
   <%= link_to  t('.all'), cars_path %>
   <%= render  partial: 'category', collection: @categories %>
-  <div class="cars">
-    <%= render partial: "car", collection: @cars %>
-  </div>
+  <%= turbo_frame_tag "cars-#{@pagy.page}", class: 'cars' do %>
+    <div class="cars">
+      <%= render partial: "car", collection: @cars %>
+      <%= turbo_frame_tag "cars-#{@pagy.next}", class: "cars", src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next %>
+    </div>
+  <% end %>
 <% end %>

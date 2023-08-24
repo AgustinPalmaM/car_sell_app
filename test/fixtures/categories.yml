@@ -5,3 +5,9 @@ automovil:
 
 camioneta:
   name: camioneta
+
+suv:
+  name: suv
+
+lujo:
+  name: lujo

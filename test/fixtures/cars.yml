@@ -27,3 +27,115 @@ two:
   traction: 4X2
   fuel: Gasolina
   category: automovil
+
+three:
+  registration: JGRP10
+  brand: Volkswagen
+  version: Gol
+  model: Gol Trendline 1.6
+  year: 2019
+  color: Gris urbano
+  price: 6490000
+  credit_price: 0
+  transmission: Mec
+  traction: 4X2
+  fuel: Gasolina
+  category: automovil
+
+four:
+  registration: CJVF10
+  brand: Hyundai
+  version: Accent
+  model: Accent pl 1.6
+  year: 2010
+  color: Beige
+  price: 4190000
+  credit_price: 0
+  transmission: Mec
+  traction: 4X2
+  fuel: Gasolina
+  category: automovil
+
+five:
+  registration: PBSL10
+  brand: Volvo
+  version: V40
+  model: V40 R-Design
+  year: 2019
+  color: Negro
+  price: 14290000
+  credit_price: 0
+  transmission: Aut
+  traction: 4X2
+  fuel: Gasolina
+  category: lujo
+
+six:
+  registration: RBHS99
+  brand: Toyota
+  version: Yaris
+  model: Yaris sport 1.4 mt
+  year: 2022
+  color: Rojo
+  price: 10290000
+  credit_price: 0
+  transmission: Mec
+  traction: 4X2
+  fuel: Gasolina
+  category: automovil
+
+seven:
+  registration: HHGH27
+  brand: Chevrolet
+  version: Tracker
+  model: Tracker aut 1.6
+  year: 2016
+  color: Azul
+  price: 8390000
+  credit_price: 0
+  transmission: Aut
+  traction: 4X2
+  fuel: Gasolina
+  category: suv
+
+eigth:
+  registration: LLPB86
+  brand: Changan
+  version: CS35
+  model: CS35 mec std 1.6
+  year: 2021
+  color: Verde
+  price: 5990000
+  credit_price: 0
+  transmission: Mec
+  traction: 4X2
+  fuel: Gasolina
+  category: suv
+
+nine:
+  registration: FBFT01
+  brand: Great Wall
+  version: Florid
+  model: Florid mt 1.6
+  year: 2013
+  color: Blanco
+  price: 4590000
+  credit_price: 0
+  transmission: Mec
+  traction: 4X2
+  fuel: Gasolina
+  category: automovil
+
+ten:
+  registration: ZT2262
+  brand: Kia Motors
+  version: Morning
+  model: Morning ls 1.0
+  year: 2006
+  color: Gris aqua
+  price: 2990000
+  credit_price: 0
+  transmission: Mec
+  traction: 4X2
+  fuel: Gasolina
+  category: automovil

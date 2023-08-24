@@ -5,6 +5,8 @@ class CarsController < ApplicationController
     @cars = Car.where(category_id: params[:category_id]) if params[:category_id]
 
     filter
+    
+    @pagy, @cars = pagy_countless(@cars, items: 4)
 
   end
 

@@ -8,6 +8,6 @@
 #  updated_at :datetime         not null
 #
 class Category < ApplicationRecord
-  has_many :cars, dependent: :restrict_with_exception
+  has_many :cars, dependent: :destroy
   validates :name, presence: true
 end
