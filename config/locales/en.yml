@@ -104,3 +104,10 @@ en:
       updated: 'Category was updated successfully'
     destroy:
       deleted: 'Category was successfully deleted.'
+  authentication:
+    users:
+      user: 
+      new:
+        title: 'Create a new user'
+      create:
+        created: "User created successfully"

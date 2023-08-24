@@ -99,3 +99,10 @@ es:
       updated: 'Categoria editada correctamente'
     destroy:
       deleted: 'Categoria eliminada correctamente'
+  authentication:
+    users:
+      user: 
+      new:
+        title: 'Crear un nuevo usuario'
+      create:
+        created: "Usuario creado correctamente"
