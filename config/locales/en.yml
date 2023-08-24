@@ -33,6 +33,8 @@ en:
   hello: "Hello world"
 
 en:
+  app_name: "Cars Sell App"
+  meta_title: "Best website to sell used cars"
   title: 'Cars Sell'
   create: 'Create new car'
   categories_title: 'categories'

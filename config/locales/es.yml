@@ -1,4 +1,6 @@
 es:
+  app_name: "Vende tu auto"
+  meta_title: "El mejor sitio para venta de autos usados"
   title: 'Vende Autos'
   create: 'Crear nuevo auto'
   categories_title: 'categorias'
