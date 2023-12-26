@@ -1,9 +1,8 @@
 class CarsController < ApplicationController
   def index
     @categories = Category.order(name: :asc).load_async
- 
-    @pagy, @cars = pagy_countless(FindCars.new.call(car_params_index).load_async, items: 4)
 
+    @pagy, @cars = pagy_countless(FindCars.new.call(car_params_index).load_async, items: 4)
   end
 
   def show
@@ -58,5 +57,4 @@ class CarsController < ApplicationController
   def car_params_index
     params.permit(:category_id, :min_price, :max_price, :query_text, :order_by, :page)
   end
-
 end

@@ -25,14 +25,13 @@ class Car < ApplicationRecord
                   using: {
                     tsearch: { prefix: true }
                   }
-                  
+
   validates :registration, :brand, :version, :model, :color, :year, :price, :transmission,
             :traction, :fuel, presence: true
-            
+
   belongs_to :category
 
   has_one_attached :photo
-
 
   ORDER_BY = {
     newest: "created_at DESC",

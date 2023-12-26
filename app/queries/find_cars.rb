@@ -21,25 +21,25 @@ class FindCars
   end
 
   def filter_by_category_id(scoped, category_id)
-    return scoped unless category_id.present?
+    return scoped if category_id.blank?
 
-    scoped.where(category_id: category_id)
+    scoped.where(category_id:)
   end
 
   def filter_by_min_price(scoped, min_price)
-    return scoped unless min_price.present?
+    return scoped if min_price.blank?
 
     scoped.where("price >= ?", min_price)
   end
 
   def filter_by_max_price(scoped, max_price)
-    return scoped unless max_price.present?
+    return scoped if max_price.blank?
 
     scoped.where("price <= ?", max_price)
   end
 
   def filter_by_query_text(scoped, query_text)
-    return scoped unless query_text.present?
+    return scoped if query_text.blank?
 
     scoped.whose_name_starts_with(query_text)
   end
@@ -49,7 +49,4 @@ class FindCars
 
     scoped.order(order_by_query)
   end
-
-
 end
-
