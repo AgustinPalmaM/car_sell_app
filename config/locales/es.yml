@@ -56,6 +56,7 @@ es:
     back: 'volver atras'
     edit: 'editar'
     delete: 'eliminar'
+    not_logged_in: 'Tienes que iniciar sesion o crear una cuenta'
   cars:
     car:
       show_more: 'ver mas'
@@ -106,3 +107,10 @@ es:
         title: 'Crear un nuevo usuario'
       create:
         created: "Usuario creado correctamente"
+    sessions:
+      session: 
+      new:
+        title: 'Ingresa a tu cuenta'
+      create:
+        login_ok: "Sesion iniciado correctamente"
+        login_error: "No se pudo iniciar sesion con tus datos"

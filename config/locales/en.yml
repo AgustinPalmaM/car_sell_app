@@ -62,6 +62,7 @@ en:
     back: 'Go back'
     edit: 'edit'
     delete: 'delete'
+    not_logged_in: 'You have to make login or create an account'
   cars:
     car:
       show_more: 'show more'
@@ -111,3 +112,10 @@ en:
         title: 'Create a new user'
       create:
         created: "User created successfully"
+    sessions:
+      session: 
+      new:
+        title: 'Login to your account'
+      create:
+        login_ok: "Loged in successfully"
+        login_error: "Error with your login action"
