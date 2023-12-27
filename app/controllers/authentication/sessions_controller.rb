@@ -14,6 +14,11 @@ module Authentication
       end
     end
 
+    def destroy
+      session.delete(:user_id)
+      redirect_to cars_path, notice: t(".signed_out")
+    end
+
     private
 
     def user_params

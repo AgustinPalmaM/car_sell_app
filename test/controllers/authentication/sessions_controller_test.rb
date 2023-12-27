@@ -20,5 +20,12 @@ module Authentication
       post sessions_url, params: { login: @user.username, password: "123456" }
       assert_redirected_to cars_path
     end
+
+    test "It should logout" do
+      login
+      delete session_url(@user.id)
+      assert_redirected_to cars_url
+      assert_equal flash[:notice], "Successfully signed out"
+    end
   end
 end

@@ -38,9 +38,14 @@ en:
   title: 'Cars Sell'
   create: 'Create new car'
   categories_title: 'categories'
+  sign_in: 'Login'
+  sign_up: 'Signup'
+  sign_out: 'Logout'
   activerecord:
-    model:
+    models:
       car: Car
+      category: Category
+      user: User
     attributes:
       category:
         name: 'name'
@@ -57,12 +62,17 @@ en:
         traction: 'traction'
         fuel: 'fuel'
         photo: 'photo'
+      user:
+        email: 'Email'
+        username: 'Username'
+        password: 'Password'
   common:
     confirm: 'Are you sure to delete?'
     back: 'Go back'
     edit: 'edit'
     delete: 'delete'
     not_logged_in: 'You have to make login or create an account'
+    confirm: 'Are you sure to logout?'
   cars:
     car:
       show_more: 'show more'
@@ -119,3 +129,5 @@ en:
       create:
         login_ok: "Loged in successfully"
         login_error: "Error with your login action"
+      destroy:
+        signed_out: "Successfully signed out"

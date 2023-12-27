@@ -4,10 +4,14 @@ es:
   title: 'Vende Autos'
   create: 'Crear nuevo auto'
   categories_title: 'categorias'
+  sign_in: 'Ingresa'
+  sign_up: 'Registrate'
+  sign_out: 'Cerrar sesion'
   activerecord:
     models:
       car: 'Auto'
       category: 'Categoria'
+      user: 'Usuario'
     attributes:
       car:
         registration: 'matricula'
@@ -25,6 +29,10 @@ es:
         category: 'categoria'
       category:
         name: 'Nombre'
+      user:
+        email: 'Correo Electronico'
+        username: 'Nombre de usuario'
+        password: 'Clave secreta'
     errors:
       models:
         car:
@@ -57,6 +65,8 @@ es:
     edit: 'editar'
     delete: 'eliminar'
     not_logged_in: 'Tienes que iniciar sesion o crear una cuenta'
+    sign_out: 'cerrar sesion'
+    confirm: 'Estas seguro de cerrar sesion?'
   cars:
     car:
       show_more: 'ver mas'
@@ -114,3 +124,5 @@ es:
       create:
         login_ok: "Sesion iniciado correctamente"
         login_error: "No se pudo iniciar sesion con tus datos"
+      destroy:
+        signed_out: "Sesion cerrado correctamente"
