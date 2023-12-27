@@ -30,6 +30,7 @@ class Car < ApplicationRecord
             :traction, :fuel, presence: true
 
   belongs_to :category
+  belongs_to :user, default: -> { Current.user }
 
   has_one_attached :photo
 

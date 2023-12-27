@@ -8,6 +8,8 @@ class User < ApplicationRecord
                        format: { with: /[a-z0-9]/i, message: :invalid }
   validates :password, length: { minimum: 6 }
 
+  has_many :cars, dependent: :destroy
+
   before_save :downcase_attributes
 
   private

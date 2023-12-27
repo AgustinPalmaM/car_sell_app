@@ -13,6 +13,7 @@ one:
   traction: 4X2
   fuel: Gasolina
   category: automovil
+  user: agustin
 
 two:
   registration: JLZC12
@@ -27,6 +28,7 @@ two:
   traction: 4X2
   fuel: Gasolina
   category: automovil
+  user: agustin
 
 three:
   registration: JGRP10
@@ -41,6 +43,7 @@ three:
   traction: 4X2
   fuel: Gasolina
   category: automovil
+  user: agustin
 
 four:
   registration: CJVF10
@@ -55,6 +58,7 @@ four:
   traction: 4X2
   fuel: Gasolina
   category: automovil
+  user: agustin
 
 five:
   registration: PBSL10
@@ -69,6 +73,7 @@ five:
   traction: 4X2
   fuel: Gasolina
   category: lujo
+  user: denisse
 
 six:
   registration: RBHS99
@@ -83,6 +88,7 @@ six:
   traction: 4X2
   fuel: Gasolina
   category: automovil
+  user: denisse
 
 seven:
   registration: HHGH27
@@ -97,6 +103,7 @@ seven:
   traction: 4X2
   fuel: Gasolina
   category: suv
+  user: denisse
 
 eigth:
   registration: LLPB86
@@ -111,6 +118,7 @@ eigth:
   traction: 4X2
   fuel: Gasolina
   category: suv
+  user: denisse
 
 nine:
   registration: FBFT01
@@ -125,6 +133,7 @@ nine:
   traction: 4X2
   fuel: Gasolina
   category: automovil
+  user: denisse
 
 ten:
   registration: ZT2262
@@ -139,3 +148,4 @@ ten:
   traction: 4X2
   fuel: Gasolina
   category: automovil
+  user: denisse
