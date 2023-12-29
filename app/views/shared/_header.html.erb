@@ -2,7 +2,7 @@
   <h1><%= t('app_name')%></h1>
 <% end %>
 <%= link_to  t('create'), new_car_path if Current.user %>
-<%= link_to  t('categories_title'), categories_path if Current.user %>
+<%= link_to  t('categories_title'), categories_path if Current.user&.admin? %>
 <%= link_to  t('sign_in'), new_session_path unless Current.user  %>
 <%= link_to  t('sign_up'), new_user_path unless Current.user %>
 <%= link_to  t('sign_out'), session_path(Current.user.id), data: {
