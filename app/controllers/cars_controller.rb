@@ -16,7 +16,7 @@ class CarsController < ApplicationController
   end
 
   def edit
-    car
+    authorize! car
   end
 
   def create
@@ -30,6 +30,7 @@ class CarsController < ApplicationController
   end
 
   def update
+    authorize! car
     if car.update(car_params)
       flash[:notice] = t(".edited")
       redirect_to car_path(car)
@@ -39,6 +40,7 @@ class CarsController < ApplicationController
   end
 
   def destroy
+    authorize! car
     return unless car.destroy
 
     flash[:notice] = t(".deleted")

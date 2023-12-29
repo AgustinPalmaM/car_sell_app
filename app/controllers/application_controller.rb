@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
 
+  class NotAuthorizedError < StandardError; end
+
+  rescue_from NotAuthorizedError do
+    redirect_to cars_path, alert: t('common.not_authorized')
+  end
+
   around_action :switch_locale
   before_action :set_current_user
   before_action :protect_pages
@@ -22,4 +28,10 @@ class ApplicationController < ActionController::Base
   def protect_pages
     redirect_to new_session_path, alert: t('common.not_logged_in') unless Current.user
   end
+
+  def authorize! car
+    is_allowed = car.user_id == Current.user.id
+    raise NotAuthorizedError unless is_allowed
+  end
+
 end

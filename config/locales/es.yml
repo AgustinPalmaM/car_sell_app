@@ -67,6 +67,7 @@ es:
     not_logged_in: 'Tienes que iniciar sesion o crear una cuenta'
     sign_out: 'cerrar sesion'
     confirm: 'Estas seguro de cerrar sesion?'
+    not_authorized: 'No tienes permiso para esta accion'
   cars:
     car:
       show_more: 'ver mas'

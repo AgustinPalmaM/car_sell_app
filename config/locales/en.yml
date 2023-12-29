@@ -73,6 +73,7 @@ en:
     delete: 'delete'
     not_logged_in: 'You have to make login or create an account'
     confirm: 'Are you sure to logout?'
+    not_authorized: 'You dont have permission to this action'
   cars:
     car:
       show_more: 'show more'
