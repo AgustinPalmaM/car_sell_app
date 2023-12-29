@@ -30,11 +30,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize!(record= nil)
-    is_allowed = if record
-      record.user_id == Current.user.id
-    else
-      Current.user.admin?
-    end
+    is_allowed = "#{controller_name.singularize}Policy".classify.constantize.new(record).send(action_name)
     raise NotAuthorizedError unless is_allowed
   end
 end
