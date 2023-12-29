@@ -4,8 +4,11 @@ agustin:
   email: agustin@gmail.com
   username: agustin
   password_digest: <%= BCrypt::Password.create('123456', cost: 5)%>
+  admin: true
 
 denisse:
   email: denisse@gmail.com
   username: denisse
   password_digest: <%= BCrypt::Password.create('123456', cost: 5)%>
+  admin: false
+
