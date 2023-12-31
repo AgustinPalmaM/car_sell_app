@@ -7,5 +7,5 @@
     <%= image_tag(car.photo, width: 200) if car.photo.attached? %>
   </div>
   <%= link_to t('.show_more'), car_path(car), data: { turbo_frame: '_top' } %>
-  <%= link_to t('common.delete'), car_path(car), data: { turbo_method: :delete, turbo_confirm: t('common.confirm') } if car.user == Current.user %>
+  <%= link_to t('common.delete'), car_path(car), data: { turbo_method: :delete, turbo_confirm: t('common.confirm') } if car.owner? %>
 </div>

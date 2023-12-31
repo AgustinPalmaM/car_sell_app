@@ -39,4 +39,8 @@ class Car < ApplicationRecord
     cheapest: "price ASC",
     expensive: "price DESC"
   }.freeze
+
+  def owner?
+    user_id == Current.user.id unless Current.user.nil?
+  end
 end
