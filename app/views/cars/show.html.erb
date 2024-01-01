@@ -15,3 +15,4 @@
   </div>
   <%= link_to t('common.edit'), edit_car_path(@car) if @car.owner? %>
 </div>
+<%=link_to  t('.view_profile'), user_path(@car.user.username) %>>

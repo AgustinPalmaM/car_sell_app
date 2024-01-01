@@ -41,6 +41,6 @@ class Car < ApplicationRecord
   }.freeze
 
   def owner?
-    user_id == Current.user.id unless Current.user.nil?
+    user_id == Current.user&.id
   end
 end

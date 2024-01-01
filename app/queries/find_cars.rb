@@ -11,6 +11,7 @@ class FindCars
     scoped = filter_by_min_price(scoped, params[:min_price])
     scoped = filter_by_max_price(scoped, params[:max_price])
     scoped = filter_by_query_text(scoped, params[:query_text])
+    scoped = filter_by_user_id(scoped, params[:user_id])
     sort(scoped, params[:order_by])
   end
 
@@ -42,6 +43,12 @@ class FindCars
     return scoped if query_text.blank?
 
     scoped.whose_name_starts_with(query_text)
+  end
+
+  def filter_by_user_id(scoped, user_id)
+    return scoped if user_id.blank?
+
+    scoped.where(user_id: user_id)
   end
 
   def sort(scoped, order_by)
