@@ -3,7 +3,7 @@ module Error
 
   included do
     rescue_from ActiveRecord::RecordNotFound do
-      redirect_to cars_path, alert: t('User not found ')
+      redirect_to cars_path, alert: t("common.not_found")
     end
   end
 end

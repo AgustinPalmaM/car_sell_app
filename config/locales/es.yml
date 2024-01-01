@@ -68,6 +68,7 @@ es:
     sign_out: 'cerrar sesion'
     confirm: 'Estas seguro de cerrar sesion?'
     not_authorized: 'No tienes permiso para esta accion'
+    not_found: 'No se ha encontrado'
   cars:
     car:
       show_more: 'ver mas'
@@ -82,6 +83,7 @@ es:
       expensive: "Mas caros primero"
     show:
       title: 'Auto'
+      view_more_cars: 'Ver mas productos de %{username}'
     edit:
       title: 'Editar producto'
     new:

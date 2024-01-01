@@ -74,6 +74,7 @@ en:
     not_logged_in: 'You have to make login or create an account'
     confirm: 'Are you sure to logout?'
     not_authorized: 'You dont have permission to this action'
+    not_found: 'Not found'
   cars:
     car:
       show_more: 'show more'
@@ -88,6 +89,7 @@ en:
       expensive: "Expensive first"
     show:
       title: 'Car'
+      view_more_cars: 'View more cars of %{username}'
     edit:
       title: 'Edit car'
     new:
