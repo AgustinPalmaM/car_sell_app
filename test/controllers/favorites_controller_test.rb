@@ -4,6 +4,7 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
   setup do
     login
     @car = cars(:two)
+    @favorite_car = cars(:one)
   end
 
   test "Should create favorite" do
@@ -13,5 +14,10 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to car_path(@car)
   end
 
-
+  test "Should destroy favorite" do
+    assert_difference "Favorite.count", -1 do
+      delete favorite_url(@favorite_car.id)
+    end
+    assert_redirected_to car_path(@favorite_car)
+  end
 end

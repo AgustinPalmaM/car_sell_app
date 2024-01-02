@@ -4,6 +4,11 @@ class FavoritesController < ApplicationController
     redirect_to car_path(car)
   end
 
+  def destroy
+    car.favorites.find_by(user: Current.user)&.destroy
+    redirect_to car_path(car), status: :see_other
+  end
+
   private
 
   def car
