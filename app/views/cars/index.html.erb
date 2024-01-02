@@ -8,10 +8,12 @@
   <% end %>
   <%= link_to  t('.all'), cars_path %>
   <%= render  partial: 'category', collection: @categories %>
-  <%= turbo_frame_tag "cars-#{@pagy.page}", class: 'cars' do %>
-    <div class="cars">
-      <%= render partial: "car", collection: @cars %>
-      <%= turbo_frame_tag "cars-#{@pagy.next}", class: "cars", src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next %>
-    </div>
+  <%= turbo_frame_tag :cars do %>
+    <%= turbo_frame_tag "cars-#{@pagy.page}", class: 'cars' do %>
+      <div class="cars">
+        <%= render partial: "car", collection: @cars %>
+        <%= turbo_frame_tag "cars-#{@pagy.next}", class: "cars", src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next %>
+      </div>
+    <% end %>
   <% end %>
 <% end %>

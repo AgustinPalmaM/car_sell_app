@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[show], param: :username
   resources :categories, except: %i[show]
   resources :cars
-  resources :favorites, only: %i[create destroy], param: :car_id
+  resources :favorites, only: %i[index create destroy], param: :car_id
   # Defines the root path route ("/")
   root "cars#index"
 end

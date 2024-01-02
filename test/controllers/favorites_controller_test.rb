@@ -7,6 +7,12 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
     @favorite_car = cars(:one)
   end
 
+  test "should return my favorites" do
+    get favorites_url
+    
+    assert_response :success
+  end
+
   test "Should create favorite" do
     assert_difference "Favorite.count", 1 do
       post favorites_url(car_id: @car.id)

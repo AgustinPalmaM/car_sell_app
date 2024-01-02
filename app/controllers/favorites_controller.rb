@@ -1,4 +1,8 @@
 class FavoritesController < ApplicationController
+  def index
+    
+  end
+  
   def create
     car.favorite!
     redirect_to car_path(car)

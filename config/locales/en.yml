@@ -36,11 +36,12 @@ en:
   app_name: "Cars Sell App"
   meta_title: "Best website to sell used cars"
   title: 'Cars Sell'
-  create: 'Create new car'
+  create: 'create new car'
+  my_favorites: 'my favorites'
   categories_title: 'categories'
   sign_in: 'Login'
   sign_up: 'Signup'
-  sign_out: 'Logout'
+  sign_out: 'logout'
   activerecord:
     models:
       car: Car
@@ -118,6 +119,9 @@ en:
       updated: 'Category was updated successfully'
     destroy:
       deleted: 'Category was successfully deleted.'
+  favorites:
+    index:
+      title: "My favorites cars"
   authentication:
     users:
       user: 

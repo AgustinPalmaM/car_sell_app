@@ -3,6 +3,7 @@ es:
   meta_title: "El mejor sitio para venta de autos usados"
   title: 'Vende Autos'
   create: 'Crear nuevo auto'
+  my_favorites: 'mis favoritos'
   categories_title: 'categorias'
   sign_in: 'Ingresa'
   sign_up: 'Registrate'
@@ -113,6 +114,9 @@ es:
       updated: 'Categoria editada correctamente'
     destroy:
       deleted: 'Categoria eliminada correctamente'
+  favorites:
+    index:
+      title: "Mis autos favoritos"
   authentication:
     users:
       user: 
