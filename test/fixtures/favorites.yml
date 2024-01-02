@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+agustin_one:
+  user: agustin
+  car: one
+
+denisse_two:
+  user: denisse
+  car: two

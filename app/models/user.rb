@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }
 
   has_many :cars, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   before_save :downcase_attributes
 
