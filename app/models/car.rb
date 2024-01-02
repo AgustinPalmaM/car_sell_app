@@ -20,6 +20,7 @@
 #
 class Car < ApplicationRecord
   include PgSearch::Model
+  include Favoritable
   pg_search_scope :whose_name_starts_with,
                   against: %i[brand model version],
                   using: {
@@ -31,7 +32,6 @@ class Car < ApplicationRecord
 
   belongs_to :category
   belongs_to :user, default: -> { Current.user }
-  has_many :favorites, dependent: :destroy
 
   has_one_attached :photo
 
@@ -44,4 +44,6 @@ class Car < ApplicationRecord
   def owner?
     user_id == Current.user&.id
   end
+
+
 end

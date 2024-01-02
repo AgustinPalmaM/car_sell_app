@@ -1,11 +1,11 @@
 class FavoritesController < ApplicationController
   def create
-    Favorite.create(car: car, user: Current.user)
+    car.favorite!
     redirect_to car_path(car)
   end
 
   def destroy
-    car.favorites.find_by(user: Current.user)&.destroy
+    car.unfavorite!
     redirect_to car_path(car), status: :see_other
   end
 
