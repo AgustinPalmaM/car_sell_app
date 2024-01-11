@@ -1,5 +1,5 @@
 <h1><%= t('.title')%></h1>
-<div class="">
+<div class="show">
   <p class="registration"><%= @car.registration %></p>
   <p class="brand"><%= @car.brand %></p>
   <p class="version"><%= @car.version %></p>
@@ -16,8 +16,4 @@
   <%= link_to t('common.edit'), edit_car_path(@car) if @car.owner? %>
 </div>
 <%=link_to  t('.view_more_cars', username: @car.user.username), user_path(@car.user.username) %>
-<% if @car.favorite%>
-  <%= link_to "💔", favorite_path(@car.id), data: { turbo_method: :delete } %>
-<% else %>
-  <%= link_to "💖", favorites_path(car_id: @car.id), data: { turbo_method: :post } %>
-<% end %>
+<%= render partial: 'favorite', locals: { car: @car } %>

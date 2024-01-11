@@ -5,12 +5,26 @@ class FavoritesController < ApplicationController
   
   def create
     car.favorite!
-    redirect_to car_path(car)
+    respond_to do |format|
+      format.html do
+        redirect_to car_path(car)
+      end
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("favorite", partial: "cars/favorite", locals: { car: car })
+      end
+    end
   end
 
   def destroy
     car.unfavorite!
-    redirect_to car_path(car), status: :see_other
+    respond_to do |format|
+      format.html do
+        redirect_to car_path(car), status: :see_other
+      end
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("favorite", partial: "cars/favorite", locals: { car: car })
+      end
+    end
   end
 
   private
