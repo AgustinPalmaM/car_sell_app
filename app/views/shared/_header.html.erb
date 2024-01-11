@@ -1,12 +1,16 @@
-<%= link_to  cars_path do %>
-  <h1 class="text-red-400"><%= t('app_name')%></h1>
-<% end %>
-<%= link_to  t('create'), new_car_path if Current.user %>
-<%= link_to  t('my_favorites'), favorites_path if Current.user %>
-<%= link_to  t('categories_title'), categories_path if Current.user&.admin? %>
-<%= link_to  t('sign_in'), new_session_path unless Current.user  %>
-<%= link_to  t('sign_up'), new_user_path unless Current.user %>
-<%= link_to  t('sign_out'), session_path(Current.user.id), data: {
-  turbo_method: :delete,
+<div class="bg-white flex justify-between items-center">
+  <%= link_to  cars_path do %>
+    <h1 class="text-2xl font-bold text-teal-500"><%= t('app_name')%></h1>
+  <% end %>
+  <div>
+    <%= link_to  t('create'), new_car_path, class: "mx-2 text-teal-500 font-bold" if Current.user %>
+    <%= link_to  t('my_favorites'), favorites_path, class: "mx-2 text-teal-500 font-bold"if Current.user %>
+    <%= link_to  t('categories_title'), categories_path, class: "mx-2 text-teal-500 font-bold" if Current.user&.admin? %>
+    <%= link_to  t('sign_in'), new_session_path, class: "mx-2 text-teal-500 font-bold" unless Current.user  %>
+    <%= link_to  t('sign_up'), new_user_path, class: "mx-2 text-teal-500 font-bold" unless Current.user %>
+    <%= link_to  t('sign_out'), session_path(Current.user.id), data: {
+    turbo_method: :delete,
   turbo_confirm: t('common.confirm')
-} if Current.user %>
+}, class: "mx-2 text-teal-500 font-bold" if Current.user %>
+  </div>
+</div>
