@@ -1,5 +1,5 @@
 <%= link_to  cars_path do %>
-  <h1><%= t('app_name')%></h1>
+  <h1 class="text-red-400"><%= t('app_name')%></h1>
 <% end %>
 <%= link_to  t('create'), new_car_path if Current.user %>
 <%= link_to  t('my_favorites'), favorites_path if Current.user %>
