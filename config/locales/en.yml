@@ -38,7 +38,7 @@ en:
   title: 'Cars Sell'
   create: 'Add new car'
   my_favorites: 'My favorites'
-  categories_title: 'categories'
+  categories_title: 'Categories'
   sign_in: 'Login'
   sign_up: 'Signup'
   sign_out: 'Logout'
@@ -81,7 +81,7 @@ en:
       show_more: 'show more'
     index:
       title: 'Cars'
-      all: 'All cars'
+      all: 'All'
       min: 'min price'
       max: 'max price'
       query_text: 'search text'

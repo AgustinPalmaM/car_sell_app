@@ -1,19 +1,20 @@
 <%= turbo_frame_tag 'home' do %>
-  <h1><%= t('.title')%></h1>
-  <%= form_with url: cars_path, method: :get do |form|%>
-    <%= form.text_field :query_text , placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
-    <%= form.number_field :min_price, placeholder: t('.min'), onChange: 'this.form.requestSubmit()', value: params[:min_price] %>
-    <%= form.number_field :max_price, placeholder: t('.max'), onChange: 'this.form.requestSubmit()', value: params[:max_price] %>
-    <%= form.select :order_by,  options_for_select(Car::ORDER_BY.keys.map { |key| [t(".#{key}"), key]}, params[:order_by]), {}, { onChange: 'this.form.requestSubmit()'} %>
+  <%= form_with url: cars_path, class: "mx-1", method: :get do |form|%>
+    <%= form.text_field :query_text , placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()', value: params[:query_text], class: "w-full my-2 rounded-2xl border-gray-200" %>
+    <div class="flex">
+      <%= form.number_field :min_price, placeholder: t('.min'), onChange: 'this.form.requestSubmit()', value: params[:min_price], class: "w-1/3 rounded-2xl border-gray-200" %>
+      <%= form.number_field :max_price, placeholder: t('.max'), onChange: 'this.form.requestSubmit()', value: params[:max_price],class: "w-1/3 rounded-2xl border-gray-200 mx-2" %>
+      <%= form.select :order_by,  options_for_select(Car::ORDER_BY.keys.map { |key| [t(".#{key}"), key]}, params[:order_by]), {}, { onChange: 'this.form.requestSubmit()',class: "w-1/3 rounded-2xl border-gray-200"} %>
+    </div>
   <% end %>
-  <%= link_to  t('.all'), cars_path %>
-  <%= render  partial: 'category', collection: @categories %>
+  <div class="flex overflow-x-scroll gap-2 m-2">
+    <%= link_to  t('.all'), cars_path, class:"bg-white text-gray-600 px-4 py-2 rounded-2xl drop-shadow-sm hover:bg-gray-300" %>
+    <%= render  partial: 'category', collection: @categories %>
+  </div>
   <%= turbo_frame_tag :cars do %>
-    <%= turbo_frame_tag "cars-#{@pagy.page}", class: 'cars' do %>
-      <div class="cars">
-        <%= render partial: "car", collection: @cars %>
-        <%= turbo_frame_tag "cars-#{@pagy.next}", class: "cars", src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next %>
-      </div>
+    <%= turbo_frame_tag "cars-#{@pagy.page}", class: "cars flex flex-col px-2 w-full sm:flex-row sm:flex-wrap sm:gap-2" do %>
+      <%= render partial: "car", collection: @cars %>
+      <%= turbo_frame_tag "cars-#{@pagy.next}", class: "cars flex flex-col px-2 w-full sm:flex-row sm:flex-wrap sm:gap-2", src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next %>
     <% end %>
   <% end %>
 <% end %>
