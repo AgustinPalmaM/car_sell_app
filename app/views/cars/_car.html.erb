@@ -1,6 +1,6 @@
 <div class="car bg-white mb-2 rounded sm:w-[calc(33.3333%_-_.5rem)] lg:w-[calc(25%_-_.5rem)]">
   <div>
-    <%= image_tag(car.photo, class: "w-full h-60 object-cover") if car.photo.attached? %>
+    <%= image_tag car.photo.attached? ? car.photo : 'placeholder.jpeg', class: "w-full h-60 object-cover" %>
   </div>
   <div class="m-2 flex justify-between">
     <div class="text-gray-500 text-sm">

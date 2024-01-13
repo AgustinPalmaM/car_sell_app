@@ -4,7 +4,7 @@
     <div class="flex">
       <%= form.number_field :min_price, placeholder: t('.min'), onChange: 'this.form.requestSubmit()', value: params[:min_price], class: "w-1/3 rounded-2xl border-gray-200" %>
       <%= form.number_field :max_price, placeholder: t('.max'), onChange: 'this.form.requestSubmit()', value: params[:max_price],class: "w-1/3 rounded-2xl border-gray-200 mx-2" %>
-      <%= form.select :order_by,  options_for_select(Car::ORDER_BY.keys.map { |key| [t(".#{key}"), key]}, params[:order_by]), {}, { onChange: 'this.form.requestSubmit()',class: "w-1/3 rounded-2xl border-gray-200"} %>
+      <%= form.select :order_by,  options_for_select(Car::ORDER_BY.keys.map { |key| [t(".#{key}"), key]}, params[:order_by]), {}, { onChange: 'this.form.requestSubmit()',class: "w-1/3 rounded-2xl border-gray-200 text-gray-500"} %>
     </div>
   <% end %>
   <div class="flex overflow-x-scroll gap-2 m-2">
