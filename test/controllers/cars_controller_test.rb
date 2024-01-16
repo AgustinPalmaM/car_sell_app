@@ -8,7 +8,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get cars_path
     assert_response :success
-    assert_select ".car", 4
+    assert_select ".car", 10
     assert_select ".category", 4
   end
 
@@ -21,7 +21,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   test "should get index cars with filtered automovil category" do
     get cars_path(category_id: categories(:automovil).id)
     assert_response :success
-    assert_select ".car", 4
+    assert_select ".car", 7
   end
 
   test "render a list of cars filtered by min price and max price" do
@@ -34,14 +34,14 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   test "sort cars by expensive first" do
     get cars_path(order_by: "expensive")
     assert_response :success
-    assert_select ".car", 4
+    assert_select ".car", 10
     assert_select ".cars .car:first-child p", "V40 R-Design"
   end
 
   test "sort cars by cheapest first" do
     get cars_path(order_by: "cheapest")
     assert_response :success
-    assert_select ".car", 4
+    assert_select ".car", 10
     assert_select ".cars .car:first-child p", "Morning ls 1.0"
   end
 

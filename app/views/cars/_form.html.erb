@@ -3,54 +3,43 @@
     <div><%= error %></div>
   <% end %>
   <div>
-    <%= form.label "registration" %>
-    <%= form.text_field :registration %>
+    <%= form.text_field :registration, placeholder: t(".title_registration"), class: "rounded-2xl border-gray-200 mb-4 w-full" %>
   </div>
   <div>
-    <%= form.label "brand" %>
-    <%= form.text_field :brand %>
+    <%= form.text_field :brand, placeholder: t(".title_brand"), class: "rounded-2xl border-gray-200 mb-4 w-full" %>
   </div>
   <div>
-    <%= form.label "version" %>
-    <%= form.text_field :version %>
+    <%= form.text_field :version, placeholder: t(".title_version"), class: "rounded-2xl border-gray-200 mb-4 w-full" %>
   </div>
   <div>
-    <%= form.label "model" %>
-    <%= form.text_field :model %>
+    <%= form.text_field :model, placeholder: t(".title_model"), class: "rounded-2xl border-gray-200 mb-4 w-full" %>
   </div>
   <div>
-    <%= form.label "year" %>
-    <%= form.number_field :year %>
+    <%= form.number_field :year, placeholder: t(".title_year"), class: "rounded-2xl border-gray-200 mb-4 w-full" %>
   </div>
   <div>
-    <%= form.label "color" %>
-    <%= form.text_field :color %>
+    <%= form.text_field :color, placeholder: t(".title_color"), class: "rounded-2xl border-gray-200 mb-4 w-full" %>
   </div>
   <div>
-    <%= form.label "price" %>
-    <%= form.number_field :price %>
+    <%= form.number_field :price, placeholder: t(".title_price"), class: "rounded-2xl border-gray-200 mb-4 w-full" %>
   </div>
   <div>
-    <%= form.label "transmission" %>
-    <%= form.text_field :transmission %>
+    <%= form.text_field :transmission, placeholder: t(".title_transmission"), class: "rounded-2xl border-gray-200 mb-4 w-full" %>
   </div>
   <div>
-    <%= form.label "traction" %>
-    <%= form.text_field :traction %>
+    <%= form.text_field :traction, placeholder: t(".title_traction"), class: "rounded-2xl border-gray-200 mb-4 w-full" %>
   </div>
   <div>
-    <%= form.label "fuel" %>
-    <%= form.text_field :fuel %>
+    <%= form.text_field :fuel, placeholder: t(".title_fuel"), class: "rounded-2xl border-gray-200 mb-4 w-full" %>
   </div>
   <div>
-    <%= form.label "category" %>
-    <%= form.collection_select :category_id, Category.all.order(name: :asc), :id, :name %>
+    <%= form.collection_select :category_id, Category.all.order(name: :asc), :id, :name,{}, { class: "rounded-2xl border-gray-200 mb-4 w-full text-gray-500"} %>
   </div>
   <div>
-    <%= form.label "photo" %>
-    <%= form.file_field :photo %>
+    <%= form.label "Photos", class: " border-gray-200 mb-4 w-full text-gray-500" %>
+    <%= form.file_field :photo, class: " border-gray-200 mb-4 w-full text-gray-500" %>
   </div>
   <div>
-    <%= form.submit  %>
+    <%= form.submit t(".create_car"), class: "px-4 py-2 font-semibold text-sm bg-cyan-500 text-white rounded-2xl cursor-pointer shadow-sm"  %>
   </div>
 <% end %>

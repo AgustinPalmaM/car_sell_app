@@ -95,6 +95,18 @@ en:
       title: 'Edit car'
     new:
       title: 'Create a new car'
+    form:
+      title_registration: 'registration'
+      title_brand: 'brand'
+      title_version: 'version'
+      title_model: 'model'
+      title_year: 'year'
+      title_color: 'color'
+      title_price: 'price'
+      title_transmission: 'transmission'
+      title_traction: 'traction'
+      title_fuel: 'fuel'
+      create_car: 'Create car'
     create:
       created: 'Created successfully'
     update:
