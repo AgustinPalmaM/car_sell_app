@@ -134,6 +134,10 @@ en:
   favorites:
     index:
       title: "My favorites cars"
+  user_mailer:
+    welcome:
+      subject: 'Welcome to Car Sell App'
+      welcome_message: 'Hey %{username}, welcome to car sell app, i hope you can sell your car with us!'
   authentication:
     users:
       user: 

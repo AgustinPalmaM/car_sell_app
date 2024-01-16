@@ -9,6 +9,7 @@ module Authentication
       @user = User.new(user_params)
 
       if @user.save
+        UserMailer.with(user: @user).welcome.deliver_later
         session[:user_id] = @user.id
         redirect_to cars_path, notice: t(".created")
       else

@@ -117,6 +117,10 @@ es:
   favorites:
     index:
       title: "Mis autos favoritos"
+  user_mailer:
+    welcome:
+      subject: 'Bienvenido a Vende tu auto app'
+      welcome_message: 'Hey %{username}, Bienvenido a tu app para vender tu auto!'
   authentication:
     users:
       user: 
