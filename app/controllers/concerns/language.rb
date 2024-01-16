@@ -9,7 +9,7 @@ module Language
     def switch_locale(&)
       I18n.with_locale(locale_from_header, &)
     end
-  
+
     def locale_from_header
       request.env["HTTP_ACCEPT_LANGUAGE"]&.scan(/^[a-z]{2}/)&.first
     end

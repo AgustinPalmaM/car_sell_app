@@ -4,10 +4,4 @@ class ApplicationController < ActionController::Base
   include Language
   include Pagy::Backend
   include Error
-
-
-
-
-
-
 end

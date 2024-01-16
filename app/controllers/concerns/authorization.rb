@@ -10,7 +10,7 @@ module Authorization
 
     private
 
-    def authorize!(record= nil)
+    def authorize!(record = nil)
       is_allowed = "#{controller_name.singularize}Policy".classify.constantize.new(record).send(action_name)
       raise NotAuthorizedError unless is_allowed
     end

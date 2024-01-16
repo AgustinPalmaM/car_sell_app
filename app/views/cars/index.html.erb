@@ -8,8 +8,8 @@
     </div>
   <% end %>
   <div class="flex overflow-x-scroll gap-2 m-2">
-    <%= link_to  t('.all'), cars_path, class:"bg-white text-gray-600 px-4 py-2 rounded-2xl drop-shadow-sm hover:bg-gray-300" %>
-    <%= render  partial: 'category', collection: @categories %>
+    <%= render(CategoryComponent.new) %>
+    <%= render(CategoryComponent.with_collection(@categories)) %>
   </div>
   <%= turbo_frame_tag :cars do %>
     <%= turbo_frame_tag "cars-#{@pagy.page}", class: "cars flex flex-col px-2 w-full sm:flex-row sm:flex-wrap sm:gap-2" do %>

@@ -49,13 +49,13 @@ class FindCars
   def filter_by_user_id(scoped, user_id)
     return scoped if user_id.blank?
 
-    scoped.where(user_id: user_id)
+    scoped.where(user_id:)
   end
 
   def filter_by_favorites(scoped, favorites)
-    return scoped unless favorites.present?
+    return scoped if favorites.blank?
 
-    scoped.joins(:favorites).where({ favorites: { user_id: Current.user.id }})
+    scoped.joins(:favorites).where({ favorites: { user_id: Current.user.id } })
   end
 
   def sort(scoped, order_by)

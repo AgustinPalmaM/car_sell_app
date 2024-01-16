@@ -1,8 +1,6 @@
 class FavoritesController < ApplicationController
-  def index
-    
-  end
-  
+  def index; end
+
   def create
     car.favorite!
     respond_to do |format|
@@ -10,7 +8,8 @@ class FavoritesController < ApplicationController
         redirect_to car_path(car)
       end
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("favorite", partial: "cars/favorite", locals: { car: car })
+        render turbo_stream: turbo_stream.replace("favorite", partial: "cars/favorite",
+                                                              locals: { car: })
       end
     end
   end
@@ -22,7 +21,8 @@ class FavoritesController < ApplicationController
         redirect_to car_path(car), status: :see_other
       end
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("favorite", partial: "cars/favorite", locals: { car: car })
+        render turbo_stream: turbo_stream.replace("favorite", partial: "cars/favorite",
+                                                              locals: { car: })
       end
     end
   end

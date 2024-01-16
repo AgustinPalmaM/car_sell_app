@@ -7,11 +7,11 @@ module Favoritable
     def favorite!
       favorites.create(user: Current.user)
     end
-  
+
     def unfavorite!
       favorite.destroy
     end
-  
+
     def favorite
       favorites.find_by(user: Current.user)
     end

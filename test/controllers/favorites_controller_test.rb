@@ -9,7 +9,7 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
 
   test "should return my favorites" do
     get favorites_url
-    
+
     assert_response :success
   end
 

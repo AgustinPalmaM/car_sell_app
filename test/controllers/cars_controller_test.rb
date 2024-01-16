@@ -9,7 +9,7 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     get cars_path
     assert_response :success
     assert_select ".car", 10
-    assert_select ".category", 4
+    assert_select ".category", 5
   end
 
   test "should get index cars with filtered camioneta category" do
