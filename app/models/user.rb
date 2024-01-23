@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true,
                        length: { minimum: 3, maximum: 15 },
                        format: { with: /[a-z0-9]/i, message: :invalid }
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, if: :password_digest_changed?
 
   has_many :cars, dependent: :destroy
   has_many :favorites, dependent: :destroy

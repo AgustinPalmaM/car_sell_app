@@ -11,13 +11,14 @@ class FetchCountryService
     uri = URI("http://ip-api.com/json/#{ip}")
     response = Net::HTTP.get(uri)
     parsed_response = JSON.parse(response)
-    status = parsed_response["status"]
+    status = parsed_response.dig("status")
     if status == "success"
-      parsed_response["countryCode"].downcase
+      parsed_response.dig("countryCode").downcase
     else
       nil
     end
-  rescue 
+  rescue
     nil
-  end
+  end  
+
 end
