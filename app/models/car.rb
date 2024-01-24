@@ -44,4 +44,8 @@ class Car < ApplicationRecord
   def owner?
     user_id == Current.user&.id
   end
+
+  def broadcast
+    broadcast_update_to self, target: "car_#{self.id}", partial: 'cars/car_details', locals: { car: self  }
+  end
 end

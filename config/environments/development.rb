@@ -71,4 +71,7 @@ Rails.application.configure do
   # Letter opener
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
+
+  # Configura la URL base para Turbo Streams
+  config.action_controller.default_url_options = { host: 'localhost', port: 3000 }
 end

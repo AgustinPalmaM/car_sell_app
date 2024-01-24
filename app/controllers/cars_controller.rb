@@ -32,6 +32,7 @@ class CarsController < ApplicationController
   def update
     authorize! car
     if car.update(car_params)
+      car.broadcast
       flash[:notice] = t(".edited")
       redirect_to car_path(car)
     else
@@ -62,4 +63,6 @@ class CarsController < ApplicationController
     params.permit(:category_id, :min_price, :max_price, :query_text, :order_by, :page, :favorites,
                   :user_id)
   end
+
+
 end

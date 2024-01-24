@@ -1,0 +1,15 @@
+<div id="<%= dom_id(car)%>">
+  <p class="registration"><%= car.registration %></p>
+  <p class="brand"><%= car.brand %></p>
+  <p class="version"><%= car.version %></p>
+  <p class="model"><%= car.model %></p>
+  <p class="year"><%= car.year %></p>
+  <p class="color"><%= car.color %></p>
+  <p class="price"><%= car.price %></p>
+  <p class="transmission"><%= car.transmission %></p>
+  <p class="traction"><%= car.traction %></p>
+  <p class="fuel"><%= car.fuel %></p>
+  <div class="">
+    <%= image_tag(car.photo, width: 500) if car.photo.attached?  %>
+  </div>
+</div>
