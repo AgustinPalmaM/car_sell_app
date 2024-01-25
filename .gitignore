@@ -32,3 +32,9 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# Ignorar el archivo fly.toml
+fly.toml
+
+# Ignorar el archivo Dockerfile
+Dockerfile
