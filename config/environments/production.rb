@@ -90,4 +90,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Configura la URL base para Turbo Streams
+  config.action_controller.default_url_options = { host: 'https://car-sell-app.fly.dev' }
 end
